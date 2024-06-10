@@ -15,6 +15,14 @@ class BmiCalculator:
         return round(weight / (height ** 2), 2)
     
     def get_bmi_category(self, bmi: float) -> str:
+        # Check if bmi is actually a float value
+        if not isinstance(bmi, float):
+            raise ValueError("BMI must be a float value")
+
+        #Check if bmi is in a valid range
+        if bmi <= 0:
+            raise ValueError("BMI must be a positive value")
+
         if bmi < 18.5:
             return "Underweight"
         elif bmi < 25:
