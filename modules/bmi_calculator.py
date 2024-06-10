@@ -12,7 +12,7 @@ class BmiCalculator:
         if height <= 0:
             raise ValueError("Height must be a positive value")
         
-        return weight / (height ** 2)
+        return round(weight / (height ** 2), 2)
     
     def get_bmi_category(self, bmi: float) -> str:
         if bmi < 18.5:
